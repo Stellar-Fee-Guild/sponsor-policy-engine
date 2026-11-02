@@ -1,0 +1,65 @@
+{
+  "name": "@stellar-fee-guild/sponsor-policy-engine",
+  "version": "0.1.0",
+  "description": "Dependency-free policy and rate-limiting engine for Stellar fee sponsorship (fee bumps).",
+  "keywords": [
+    "stellar",
+    "soroban",
+    "fee-bump",
+    "sponsorship",
+    "rate-limit",
+    "policy"
+  ],
+  "homepage": "https://github.com/Stellar-Fee-Guild/sponsor-policy-engine#readme",
+  "bugs": {
+    "url": "https://github.com/Stellar-Fee-Guild/sponsor-policy-engine/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stellar-Fee-Guild/sponsor-policy-engine.git"
+  },
+  "license": "MIT",
+  "author": "Stellar Fee Guild",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "example": "npm run build && node examples/relay-flow.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}
